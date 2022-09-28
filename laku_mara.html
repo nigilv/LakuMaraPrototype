@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat">
+        <style>
+            body {
+                font-family: 'Cinzel';
+                font-size: 24.5px;
+                color: #940520;
+                background-color: #E6D3BC;
+            }
+            .center-text {
+                text-align: center;
+            }
+            .right-text {
+                text-align: right;
+            }
+            .info-text {
+                text-align: right;
+                font-family: 'Montserrat';
+                font-size: 18.5px;
+            }
+            .column {
+                float: left;
+            }
+            .left, .right {
+                width: 20%;
+            }
+            .middle {
+                width: 60%;
+            }
+            #table_of_contents {
+                position: fixed;
+                top: 0;
+            }
+            #toc {
+                display: none;
+            }
+            .image-container {
+                background-image: url('media/curtain_opening.gif');
+                height: 100%;
+                width:100%;
+                background-repeat: no-repeat;
+            }
+            reveal{
+                position: relative;
+                transform: translateY(150px);
+                opacity: 0;
+                transition: 2s all ease;
+                }
+            .reveal.active{
+                transform: translateY(0);
+                opacity: 1;
+            }
+        </style>
+        <script>
+            function showDiv() {
+                if(document.getElementById('show_toc').value === "Hide Table of Contents"){
+                    document.getElementById('toc').style.display = "none";
+                    document.getElementById('show_toc').value = "Show Table of Contents";
+                }
+                else {
+                    document.getElementById('toc').style.display = "block";
+                    document.getElementById('show_toc').value = "Hide Table of Contents";
+                }
+
+            }
+            function reveal() {
+                var reveals = document.querySelectorAll(".reveal");
+                for (var i = 0; i < reveals.length; i++) {
+                    var windowHeight = window.innerHeight;
+                    var elementTop = reveals[i].getBoundingClientRect().top;
+                    var elementVisible = 150;
+                    if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                    } else {
+                    reveals[i].classList.remove("active");
+                    }
+                }
+            }
+            window.addEventListener("scroll", reveal);
+
+            // To check the scroll position on page load
+            reveal();
+
+                $(function () {
+                    var fileName = "Hymn_of_Resurrection.pdf";
+                    $("#btnShow").click(function () {
+                        $("#dialog").dialog({
+                            modal: true,
+                            title: fileName,
+                            width: 540,
+                            height: 450,
+                            buttons: {
+                                Close: function () {
+                                    $(this).dialog('close');
+                                }
+                            },
+                            open: function () {
+                                var object = "<object data=\"{FileName}\" type=\"application/pdf\" width=\"500px\" height=\"300px\">";
+                                object += "If you are unable to view file, you can download from <a href = \"{FileName}\">here</a>";
+                                object += " or download <a target = \"_blank\" href = \"http://get.adobe.com/reader/\">Adobe PDF Reader</a> to view the file.";
+                                object += "</object>";
+                                object = object.replace(/{FileName}/g, "../Files/" + fileName);
+                                $("#dialog").html(object);
+                            }
+                        });
+                    });
+                });
+        </script>
+    </head>
+    <body>
+        <div class="column left">
+            <div class="hack_for_now">
+                &nbsp;
+            </div>
+            <div id="table_of_contents">
+                <input id="show_toc" type="button" value="Show Table of Contents" onclick="showDiv()" />
+                <div id="toc">
+                    <a href="#laku_mara">Laku Mara</a>
+                </div>
+            </div>
+        </div>
+        <div class="column middle">
+            <div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+            <a id="laku_mara"></a>
+            <hr>
+            <div class="image-container reveal">
+                <p class="info-text">
+                    The sanctuary veil is drawn open. <br>
+                    The deacon enters the santaury and incenses, <br>
+                    proceeding from right to left. <br>
+                    At the entrance of the sanctuary, he incenses the people. <br>
+                    It is fitting to incense up to the main door of the church. <br>
+                    In the Solemn Form, the second stanza may be omitted. <br>
+                    In the Simple Form, the second stanza may be omitted.
+                </p>
+                <input id="btnShow" type="button" value="Show Music">
+                <br>
+                <p class="center-text">
+                Option 1: Hymn [Laku mara...] 
+                </p>
+                <br>
+
+                <p>
+                A:&nbsp;&nbsp;&nbsp;Lord of all <br>
+                        WE And praise You <br>
+                        And Lord Isho  <br>
+                        M'shiha we glorify You  <br>
+                        For You  <br>
+                        Raise our bodies <br>
+                        And You  <br>
+                        Are the one  <br>
+                        Who saves our souls. <br>
+                </p>
+                
+                <p class="right-text">
+                Sundays and feast days
+                </p>
+
+                <p>      
+                C&D:&nbsp;&nbsp;&nbsp;O Lord, it is right to thank <br>
+                            and praise Your name <br> 
+                            O Most High, God <br>
+                </p>
+                <br>
+                <p>
+                Lord of all...
+                
+                </p>
+            </div>
+            <hr>
+            <div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+        </div>
+        <div class="column right">
+            <iframe src="https://drive.google.com/file/d/1ZRzMP6KyZMlQqSVsWRrmYtUjji9Dqkhi/preview" width="640" height="480" allow="autoplay"></iframe>        </div>
+    </body>
+</html>

@@ -4,3 +4,4 @@
 - [ ] (Fix curtain opening gif)
 - [ ] (Get sanctuary veil gif from Joseph Abraham)
 - [ ] (More todos...)
+- [ ] (canva fonts and color changed, all Lora, black: spoken words, red: instructions, titles, and person abbrev)
